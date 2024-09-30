@@ -1,0 +1,21 @@
+npm cache clean --force
+
+
+
+# Install nvm if not already installed
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# Restart terminal or source nvm script
+source ~/.bashrc
+
+# Install the latest LTS version of Node.js
+nvm install --lts
+
+# Use the installed version
+nvm use --lts
+
+
+
+npm run build
+
+
