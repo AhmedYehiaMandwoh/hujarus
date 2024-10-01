@@ -9,6 +9,7 @@ return [
         \App\Enums\ModuleNameEnum::WITHDRAWS->value => 'Withdrawals',
         \App\Enums\ModuleNameEnum::CLIENTS->value => 'Clients',
         \App\Enums\ModuleNameEnum::SPONSORS->value => 'Sponsors',
+        \App\Enums\ModuleNameEnum::CATEGORIES->value => 'Categories',
         \App\Enums\ModuleNameEnum::OFFERS->value => 'Offers',
         \App\Enums\ModuleNameEnum::SETTINGS->value => 'Settings',
     ],

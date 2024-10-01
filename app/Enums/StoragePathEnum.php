@@ -12,6 +12,7 @@ enum StoragePathEnum: string
     case CLIENT_AVATAR='client_avatar';
     case WITHDRAWS='withdraws';
     case SPONSORS='sponsors';
+    case CATEGORIES='categories';
     case SETTINGS='settings';
     case CLIENTS='clients';
     case OFFERS='offers';

@@ -27,6 +27,7 @@ class Menu
         $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::CLIENTS), 'icon' => 'pi-users', 'href' => \route('clients.index'), 'active' => Str::startsWith($current_route_name, 'clients.')];
             $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::WITHDRAWS), 'icon' => 'pi-wallet', 'href' => \route('withdraws.index'), 'active' => Str::startsWith($current_route_name, 'withdraws.')];
             $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::SPONSORS), 'icon' => 'pi-sitemap', 'href' => \route('sponsors.index'), 'active' => Str::startsWith($current_route_name, 'sponsors.')];
+            $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::CATEGORIES), 'icon' => 'pi-sitemap', 'href' => \route('categories.index'), 'active' => Str::startsWith($current_route_name, 'categories.')];
             $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::OFFERS), 'icon' => 'pi-gift', 'href' => \route('offers.index'), 'active' => Str::startsWith($current_route_name, 'offers.')];
             $response[] = ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::SETTINGS), 'icon' => 'pi-cog', 'href' => \route('settings.index'), 'active' => Str::startsWith($current_route_name, 'settings.')];
         return $response;

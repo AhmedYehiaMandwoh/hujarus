@@ -97,6 +97,20 @@ Route::group([
 
             });
         });
+         // categories
+        Route::group(['prefix' => 'categories','as'=>'categories.'],function (){
+            Route::get('/',\App\Actions\Categories\CategoriesIndexAction::class)->name('index');
+            Route::get('/create',\App\Actions\Categories\CategoriesCreateAction::class)->name('create');
+            Route::post('/store',\App\Actions\Categories\CategoriesStoreAction::class)->name('store');
+            Route::post('/{category}',\App\Actions\Categories\CategoriesUpdateAction::class)->name('update');
+            Route::delete('/{category}',\App\Actions\Categories\CategoriesDeleteAction::class)->name('delete');
+
+            Route::group(['prefix' => 'profile/{category}', 'as' => 'profile.'], function () {
+                Route::get('/', [\App\Actions\Categories\CategoriesProfileAction::class, 'viewMainData'])->name('main-data');
+                Route::get('/edit', [\App\Actions\Categories\CategoriesProfileAction::class, 'viewEdit'])->name('edit');
+
+            });
+        });
 
             // Offers
             Route::group(['prefix' => 'offers','as'=>'offers.'],function (){

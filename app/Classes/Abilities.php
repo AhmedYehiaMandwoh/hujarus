@@ -40,6 +40,21 @@ enum Abilities: string
     case M_SPONSORS_DELETE = 'm_sponsors_delete';
     case M_SPONSORS_MAIN_DATA = 'm_sponsors_main_data';
 
+    // CATEGORIES
+    case M_CATEGORIES_INDEX = 'm_categories_index';
+    case M_CATEGORIES_INDEX_EXPORT = 'm_categories_index_export';
+    case M_CATEGORIES_CREATE = 'm_categories_create';
+    case M_CATEGORIES_UPDATE = 'm_categories_update';
+    case M_CATEGORIES_DELETE = 'm_categories_delete';
+    case M_CATEGORIES_MAIN_DATA = 'm_categories_main_data';
+    // Slider
+    case M_Slider_INDEX = 'm_slider_index';
+    case M_Slider_INDEX_EXPORT = 'm_slider_index_export';
+    case M_Slider_CREATE = 'm_slider_create';
+    case M_Slider_UPDATE = 'm_slider_update';
+    case M_Slider_DELETE = 'm_slider_delete';
+    case M_Slider_MAIN_DATA = 'm_slider_main_data';
+
     // OFFERS
     case M_OFFERS_INDEX = 'm_offers_index';
     case M_OFFERS_INDEX_EXPORT = 'm_offers_index_export';
@@ -97,6 +112,20 @@ enum Abilities: string
         ['key' => self::M_SPONSORS_UPDATE, 'module' => ModuleNameEnum::SPONSORS],
         ['key' => self::M_SPONSORS_DELETE, 'module' => ModuleNameEnum::SPONSORS],
         ['key' => self::M_SPONSORS_MAIN_DATA, 'module' => ModuleNameEnum::SPONSORS],
+
+        ['key' => self::M_CATEGORIES_INDEX, 'module' => ModuleNameEnum::CATEGORIES],
+        ['key' => self::M_CATEGORIES_INDEX_EXPORT, 'module' => ModuleNameEnum::CATEGORIES],
+        ['key' => self::M_CATEGORIES_CREATE, 'module' => ModuleNameEnum::CATEGORIES],
+        ['key' => self::M_CATEGORIES_UPDATE, 'module' => ModuleNameEnum::CATEGORIES],
+        ['key' => self::M_CATEGORIES_DELETE, 'module' => ModuleNameEnum::CATEGORIES],
+        ['key' => self::M_CATEGORIES_MAIN_DATA, 'module' => ModuleNameEnum::CATEGORIES],
+
+        ['key' => self::M_Slider_INDEX, 'module' => ModuleNameEnum::Slider],
+        ['key' => self::M_Slider_INDEX_EXPORT, 'module' => ModuleNameEnum::Slider],
+        ['key' => self::M_Slider_CREATE, 'module' => ModuleNameEnum::Slider],
+        ['key' => self::M_Slider_UPDATE, 'module' => ModuleNameEnum::Slider],
+        ['key' => self::M_Slider_DELETE, 'module' => ModuleNameEnum::Slider],
+        ['key' => self::M_Slider_MAIN_DATA, 'module' => ModuleNameEnum::Slider],
 
         ['key' => self::M_OFFERS_INDEX, 'module' => ModuleNameEnum::OFFERS],
         ['key' => self::M_OFFERS_INDEX_EXPORT, 'module' => ModuleNameEnum::OFFERS],
