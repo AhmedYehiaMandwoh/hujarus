@@ -1,123 +1,67 @@
 <template>
-    <!-- Carousel Start -->
-    <carousel :autoplay="true" :loop="true" :items-to-show="1" :nav="true"  :autoplayTimeout="3000">
-      <slide v-for="item in carouselItems" :key="item.id">
-        <div class="owl-carousel-item position-relative">
-          <img class="img-fluid w-100" :src="item.image" alt="Image">
-          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-10 col-lg-8 text-left">
-                  <h5 class="text-primary text-uppercase mb-3 animated slideInDown">{{ item.title }}</h5>
-                  <h1 class="display-3 text-white animated slideInDown">{{ item.subtitle }}</h1>
-                  <p class="fs-5 text-white mb-4 pb-2">{{ item.description }}</p>
-                  <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                  <a href="#" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
-                </div>
-              </div>
+    <!-- Video Background Start -->
+    <div class="video-background">
+      <video autoplay muted loop class="video-background__video">
+        <source src="/theme-front/hajar.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10 col-lg-8 text-left">
+              <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
+              <h1 class="display-3 text-white animated slideInDown">The Best Online Learning Platform</h1>
+              <p class="fs-5 text-white mb-4 pb-2">
+                Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.
+              </p>
+              <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+              <a href="#" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
             </div>
           </div>
         </div>
-      </slide>
-  
-      <template #addons>
-        <!-- <navigation /> -->
-        <pagination />
-      </template>
-    </carousel>
-    <!-- Carousel End -->
+      </div>
+    </div>
+    <!-- Video Background End -->
   </template>
   
   <script>
-  // Import the carousel components and styles
-  import 'vue3-carousel/dist/carousel.css';
-  import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-  
   export default {
-    components: {
-      Carousel,
-      Slide,
-      Pagination,
-      Navigation
-    },
-    data() {
-      return {
-        carouselItems: [
-          {
-            id: 1,
-            image: "/theme-front/img/carousel-2.jpg",
-            title: "Best Online Courses",
-            subtitle: "The Best Online Learning Platform",
-            description: "Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr."
-          },
-          {
-            id: 2,
-            image: "/theme-front/img/carousel-1.jpg",
-            title: "Best Online Courses",
-            subtitle: "Get Educated Online From Your Home",
-            description: "Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr."
-          }
-        ]
-      };
-    }
+    // Remove any unused imports related to the carousel
   };
   </script>
   
   <style scoped>
-  .owl-carousel-item {
+  .video-background {
     position: relative;
     width: 100%;
+    height: 100vh; /* Full height */
+    overflow: hidden;
   }
   
-  img.img-fluid.w-100 {
-    width: 100%; /* Ensure the image takes up full width */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  /* Custom arrow styles */
-  .carousel__prev,
-  .carousel__next {
-    margin: 0;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid #ffffff;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
-    border-radius: 50%;
+  .video-background__video {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    cursor: pointer;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Send the video behind the overlay */
   }
   
-  .carousel__prev {
-    left: 15px;
+  .video-overlay {
+    position: relative;
+    z-index: 2; /* Bring the overlay content above the video */
+    background: rgba(24, 29, 56, 0.7); /* Semi-transparent background */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content */
+    text-align: left; /* Align text to the left */
   }
   
-  .carousel__next {
-    right: 15px;
+  .text-primary {
+    color: #007bff; /* Primary color for text */
   }
-  
-  .carousel__prev:hover,
-  .carousel__next:hover {
-    background-color: #ffffff;
-    color: #000;
-  }
-  
-  /* Ensure text and buttons are left-aligned */
-  .text-left {
-    text-align: left;
-  }
-  
-  h5, h1, p {
-    text-align: left; /* Apply to headers and paragraphs for consistent alignment */
-  }
-  
   </style>
   
