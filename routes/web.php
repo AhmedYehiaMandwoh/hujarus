@@ -21,7 +21,10 @@ Route::group([
     // Home Page
     Route::get('/',\App\Actions\HomePage\HomePageAction::class)->name('home-page');
     
-
+    Route::group(['prefix' => 'enroll','as'=>'enroll.'],function (){
+        Route::get('/',\App\Actions\Enroll\EnrollIndexAction::class)->name('index');
+        Route::post('/store',\App\Actions\Enroll\EnrollStoreAction::class)->name('store');
+    });
 
 
 

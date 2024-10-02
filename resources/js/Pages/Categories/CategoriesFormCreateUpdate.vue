@@ -7,8 +7,15 @@
             </div>
             <floating-input required :form="el_form" name="title" />
             <floating-input required :form="el_form" name="description" />
+
+            
+
+            <floating-dropdown :form="el_form" name="icon" :required="1"
+                :options="icons" :label="$t('base.icons')" />
+
             <floating-dropdown v-if="!is_create" :form="el_form" name="is_active" :required="1"
                 :options="formData.is_active" :label="$t('base.is_active')" />
+
             <div class="">
                 <submit-button :text="$t('base.save')" :form="el_form" />
             </div>
@@ -17,7 +24,6 @@
 </template>
 
 <script setup>
-
 import { useForm } from "@inertiajs/vue3";
 import FloatingInput from "@/Components/Form/FloatingInput.vue";
 import SubmitButton from "@/Components/Buttons/SubmitButton.vue";
@@ -26,7 +32,13 @@ import AvatarInput from "@/Components/Form/AvatarInput.vue";
 import FloatingDropdown from "@/Components/Form/FloatingDropdown.vue";
 import ElPanelCreate from "@/Components/ElPanelCreate.vue";
 
+
+
+// Form data
 const props = defineProps({
+    icons: {
+        type: Array,
+    },
     row: {
         type: Array,
         default: {}
@@ -44,19 +56,24 @@ const el_form = useForm({
     avatar_url: el_row?.avatar_url ?? null,
     title: el_row?.title ?? null,
     description: el_row?.description ?? null,
+    icon: props?.icon ?? '', // Icon field for selected icon
     is_active: is_create ? true : el_row?.is_active,
 })
 
+// Submit the form
 const submit = () => {
     el_form.post(is_create ? route('categories.store') : route('categories.update', el_form.id), {
         onSuccess: () => {
             is_create && el_form.reset();
-          
         },
     })
 }
-
 </script>
 
-
-
+<style>
+.form-select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+</style>

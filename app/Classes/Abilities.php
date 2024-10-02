@@ -47,13 +47,18 @@ enum Abilities: string
     case M_CATEGORIES_UPDATE = 'm_categories_update';
     case M_CATEGORIES_DELETE = 'm_categories_delete';
     case M_CATEGORIES_MAIN_DATA = 'm_categories_main_data';
-    // Slider
-    case M_Slider_INDEX = 'm_slider_index';
-    case M_Slider_INDEX_EXPORT = 'm_slider_index_export';
-    case M_Slider_CREATE = 'm_slider_create';
-    case M_Slider_UPDATE = 'm_slider_update';
-    case M_Slider_DELETE = 'm_slider_delete';
-    case M_Slider_MAIN_DATA = 'm_slider_main_data';
+    // ENROLCLIENTS
+    case M_ENROLCLIENTS_INDEX = 'm_enroll_clients_index';
+    case M_ENROLCLIENTS_INDEX_EXPORT = 'm_enroll_clients_index_export';
+
+    // COURSES
+    case M_COURSES_INDEX = 'm_courses_index';
+    case M_COURSES_INDEX_EXPORT = 'm_courses_index_export';
+    case M_COURSES_CREATE = 'm_courses_create';
+    case M_COURSES_UPDATE = 'm_courses_update';
+    case M_COURSES_DELETE = 'm_courses_delete';
+    case M_COURSES_MAIN_DATA = 'm_courses_main_data';
+
 
     // OFFERS
     case M_OFFERS_INDEX = 'm_offers_index';
@@ -120,12 +125,18 @@ enum Abilities: string
         ['key' => self::M_CATEGORIES_DELETE, 'module' => ModuleNameEnum::CATEGORIES],
         ['key' => self::M_CATEGORIES_MAIN_DATA, 'module' => ModuleNameEnum::CATEGORIES],
 
-        ['key' => self::M_Slider_INDEX, 'module' => ModuleNameEnum::Slider],
-        ['key' => self::M_Slider_INDEX_EXPORT, 'module' => ModuleNameEnum::Slider],
-        ['key' => self::M_Slider_CREATE, 'module' => ModuleNameEnum::Slider],
-        ['key' => self::M_Slider_UPDATE, 'module' => ModuleNameEnum::Slider],
-        ['key' => self::M_Slider_DELETE, 'module' => ModuleNameEnum::Slider],
-        ['key' => self::M_Slider_MAIN_DATA, 'module' => ModuleNameEnum::Slider],
+        ['key' => self::M_ENROLCLIENTS_INDEX, 'module' => ModuleNameEnum::ENROLCLIENTS],
+        ['key' => self::M_ENROLCLIENTS_INDEX_EXPORT, 'module' => ModuleNameEnum::ENROLCLIENTS],
+
+
+        ['key' => self::M_COURSES_INDEX, 'module' => ModuleNameEnum::COURSES],
+        ['key' => self::M_COURSES_INDEX_EXPORT, 'module' => ModuleNameEnum::COURSES],
+        ['key' => self::M_COURSES_CREATE, 'module' => ModuleNameEnum::COURSES],
+        ['key' => self::M_COURSES_UPDATE, 'module' => ModuleNameEnum::COURSES],
+        ['key' => self::M_COURSES_DELETE, 'module' => ModuleNameEnum::COURSES],
+        ['key' => self::M_COURSES_MAIN_DATA, 'module' => ModuleNameEnum::COURSES],
+
+    
 
         ['key' => self::M_OFFERS_INDEX, 'module' => ModuleNameEnum::OFFERS],
         ['key' => self::M_OFFERS_INDEX_EXPORT, 'module' => ModuleNameEnum::OFFERS],

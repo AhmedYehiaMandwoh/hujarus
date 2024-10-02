@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #06BBCC;
-    --light: #F0FBFC;
+    --primary: #c4990c;
+    --light: #fff;
     --dark: #181d38;
 }
 
@@ -197,7 +197,7 @@
 }
 
 .page-header {
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/carousel-1.jpg);
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/muslim.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

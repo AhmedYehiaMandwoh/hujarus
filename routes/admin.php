@@ -111,8 +111,27 @@ Route::group([
 
             });
         });
+         // EnrollClients
+        Route::group(['prefix' => 'enrollClients','as'=>'enrollClients.'],function (){
+            Route::get('/',\App\Actions\EnrollClients\EnrollClientsIndexAction::class)->name('index');
 
-            // Offers
+        });
+         // courses
+        Route::group(['prefix' => 'courses','as'=>'courses.'],function (){
+            Route::get('/',\App\Actions\Courses\CoursesIndexAction::class)->name('index');
+            Route::get('/create',\App\Actions\Courses\CoursesCreateAction::class)->name('create');
+            Route::post('/store',\App\Actions\Courses\CoursesStoreAction::class)->name('store');
+            Route::post('/{course}',\App\Actions\Courses\CoursesUpdateAction::class)->name('update');
+            Route::delete('/{course}',\App\Actions\Courses\CoursesDeleteAction::class)->name('delete');
+
+            Route::group(['prefix' => 'profile/{course}', 'as' => 'profile.'], function () {
+                Route::get('/', [\App\Actions\Courses\CoursesProfileAction::class, 'viewMainData'])->name('main-data');
+                Route::get('/edit', [\App\Actions\Courses\CoursesProfileAction::class, 'viewEdit'])->name('edit');
+
+            });
+        });
+
+        // Offers
             Route::group(['prefix' => 'offers','as'=>'offers.'],function (){
                 Route::get('/',\App\Actions\Offers\OffersIndexAction::class)->name('index');
                 Route::get('/create',\App\Actions\Offers\OffersCreateAction::class)->name('create');

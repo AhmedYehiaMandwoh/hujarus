@@ -15,7 +15,9 @@ enum ModuleNameEnum: string
     case BRANCHES = 'branches';
     case WITHDRAWS = 'withdraws';
     case SPONSORS = 'sponsors';
+    case COURSES = 'courses';
     case CATEGORIES = 'categories';
+    case ENROLCLIENTS = 'enroll_clients';
     case SETTINGS = 'settings';
     case CLIENTS = 'clients';
     case OFFERS = 'offers';

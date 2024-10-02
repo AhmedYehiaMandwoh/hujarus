@@ -17,7 +17,8 @@ class CategoriesCreateAction extends BaseAction
             ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::CATEGORIES), 'url' => route('categories.index')],
             ['label' => __('base.create_sponsor'), 'url' => route('categories.create')],
         ]);
-        return Inertia::render('Categories/CategoriesFormCreateUpdate');
+        $icons = CategoriesIndexAction::make()->getCreateUpdateData()['form_data']['icons'];
+        return Inertia::render('Categories/CategoriesFormCreateUpdate', compact('icons'));
     }
 
 }

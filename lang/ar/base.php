@@ -160,6 +160,21 @@ return [
     'can_use_form' => 'يمكن إستخدامة من تاريخ',
     'no_offer_available_now' => 'لا يوجد عروض حاليه برجاء المحاولة مره اخري فيما بعد',
     'time_of_work' => 'مواعيد العمل',
+    'icons' => 'علامات',
+    'parent_name' => 'اسم الوالد',
+    'student_name' => 'اسم الطالب',
+    'student_age' => 'عمر الطالب',
+    'course_needed' => 'الدورة المطلوبة',
+    'phone_number' => 'رقم الهاتف',
+    'email' => 'البريد الإلكتروني',
+    'country' => 'البلد',
+    'days' => 'الأيام',
+    'time_from' => 'الوقت من',
+    'time_to' => 'الوقت إلى',
+    'time_zone' => 'المنطقة الزمنية',
+    'class_duration' => 'مدة الدرس',
+    'preferred_teacher' => 'المعلم المفضل',
+    'goals' => 'الأهداف',
 
 
 ];

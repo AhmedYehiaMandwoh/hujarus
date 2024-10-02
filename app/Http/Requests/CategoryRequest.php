@@ -26,6 +26,7 @@ class CategoryRequest extends FormRequest
                 'nullable', new LargeTextRule()
             ],
             'avatar' => ['nullable', new ImageRule()],
+            'icon' => 'required',
             'is_active' => 'nullable|boolean',
 
         ];

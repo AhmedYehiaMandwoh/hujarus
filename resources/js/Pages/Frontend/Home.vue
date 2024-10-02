@@ -2,10 +2,9 @@
       <div>
         
         <Carousel />
-        <Service />
+        <Categories :categories="categories" />
         <Aboutus />
-        <Categories />
-        <Courses />
+        <!-- <Courses /> -->
         <Instructors />
         <Testimonial />
       </div>
@@ -15,7 +14,6 @@
   <script>
 
   import Carousel from "@/Pages/Frontend/Carousel/Index.vue"; // Import your service here
-  import Service from "@/Pages/Frontend/Services/Index.vue"; // Import your service here
   import Aboutus from "@/Pages/Frontend/Aboutus/Index.vue"; // Import your service here
   import Categories from "@/Pages/Frontend/Categories/Index.vue"; // Import your service here
   import Courses from "@/Pages/Frontend/Courses/Index.vue"; // Import your service here
@@ -23,10 +21,12 @@
   import Testimonial from "@/Pages/Frontend/Testimonial/Index.vue"; // Import your service here
   
   export default {
-    name: 'App',
+    name: 'Home',
+  props: {
+    categories: Array,  // Accept categories data as a prop
+  },
     components: {
       Carousel,
-      Service,
       Aboutus,
       Categories,
       Courses,

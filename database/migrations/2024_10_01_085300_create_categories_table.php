@@ -26,6 +26,7 @@ return new class extends Migration
             $table->text('description')->nullable();  // Category description
             $table->boolean('is_active')->default(true); // Active status
             $table->string('avatar')->nullable();
+            $table->string('icon')->nullable();
 
             $table->softDeletes();                    // Soft delete column
             $table->timestamps();                     // Created at and updated at

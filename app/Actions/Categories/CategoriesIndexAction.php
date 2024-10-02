@@ -4,7 +4,7 @@ namespace App\Actions\Categories;
 
 
 use App\Classes\{Abilities, BaseAction};
-use App\Enums\{IsActiveEnum, ModuleNameEnum};
+use App\Enums\{IsActiveEnum, ModuleNameEnum, IconsEnum};
 use App\Models\Category;
 use Inertia\Inertia;
 
@@ -30,6 +30,7 @@ class CategoriesIndexAction extends BaseAction
         return [
             'form_data' => [
                 'is_active' => IsActiveEnum::getOptionsData(),
+                'icons' => IconsEnum::getOptionsData(),
             ]
         ];
     }

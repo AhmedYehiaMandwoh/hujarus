@@ -17,6 +17,7 @@ class Category extends BaseModel
         'title',
         'description',
         'avatar',
+        'icon',
         'is_active', // Added to allow toggling of category status
         'created_by_id',
         'updated_by_id',
