@@ -15,7 +15,7 @@ class CoursesCreateAction extends BaseAction
 
         $this->breadcrumb([
             ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::COURSES), 'url' => route('courses.index')],
-            ['label' => __('base.create_sponsor'), 'url' => route('courses.create')],
+            ['label' => __('base.create'), 'url' => route('courses.create')],
         ]);
         $categories = CoursesIndexAction::make()->getCreateUpdateData()['form_data']['categories'];
         return Inertia::render('Courses/CoursesFormCreateUpdate', compact('categories'));

@@ -14,9 +14,9 @@
         <div :class="['collapse navbar-collapse', { show: isNavbarOpen }]" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <Link href="/" class="nav-item nav-link active">Home</Link>
-                <Link href="/about" class="nav-item nav-link">About</Link>
+                <Link href="#aboutus" class="nav-item nav-link">About</Link>
                 <Link href="#categories" class="nav-item nav-link">Courses</Link> <!-- Change href here -->
-                <Link href="/contact" class="nav-item nav-link">Contact</Link>
+                <Link href="#contact" class="nav-item nav-link">Contact</Link>
             </div>
             <Link href="/enroll" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
                 Join Now<i class="fa fa-arrow-right ms-3"></i>

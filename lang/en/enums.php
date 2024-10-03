@@ -11,6 +11,7 @@ return [
         \App\Enums\ModuleNameEnum::SPONSORS->value => 'Sponsors',
         \App\Enums\ModuleNameEnum::CATEGORIES->value => 'Categories',
         \App\Enums\ModuleNameEnum::COURSES->value => 'Courses',
+        \App\Enums\ModuleNameEnum::TESTIMONIALS->value => 'Testimonials',
         \App\Enums\ModuleNameEnum::ENROLCLIENTS->value => 'EnrollClients',
         \App\Enums\ModuleNameEnum::OFFERS->value => 'Offers',
         \App\Enums\ModuleNameEnum::SETTINGS->value => 'Settings',

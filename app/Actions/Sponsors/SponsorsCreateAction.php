@@ -15,7 +15,7 @@ class SponsorsCreateAction extends BaseAction
 
         $this->breadcrumb([
             ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::SPONSORS), 'url' => route('sponsors.index')],
-            ['label' => __('base.create_sponsor'), 'url' => route('sponsors.create')],
+            ['label' => __('base.create'), 'url' => route('sponsors.create')],
         ]);
         return Inertia::render('Sponsors/SponsorsFormCreateUpdate');
     }

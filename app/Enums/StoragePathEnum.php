@@ -14,6 +14,7 @@ enum StoragePathEnum: string
     case SPONSORS='sponsors';
     case CATEGORIES='categories';
     case COURSES='courses';
+    case TESTIMONIALS='testimonials';
     case SETTINGS='settings';
     case CLIENTS='clients';
     case OFFERS='offers';

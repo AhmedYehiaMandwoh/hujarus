@@ -179,4 +179,6 @@ return [
     'duration' => 'Duration',
     'student_count' => 'Student Count',
     'slug' => 'Slug',
+    'testimonials' => 'testimonials',
+    'create' => 'Create',
 ];

@@ -181,6 +181,9 @@ return [
     'duration' => 'المدة',
     'student_count' => 'عدد الطلاب',
     'slug' => 'شعار',
+    'testimonials' => 'اراء الطلاب',
+    'create' => 'إنشاء',
+
 
 
 

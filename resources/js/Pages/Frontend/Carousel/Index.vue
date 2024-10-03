@@ -1,7 +1,7 @@
 <template>
   <!-- Video Background Start -->
   <div class="video-background">
-    <video autoplay muted loop class="video-background__video">
+    <video ref="backgroundVideo" autoplay muted loop class="video-background__video">
       <source src="/theme-front/hajar.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
@@ -10,10 +10,10 @@
         <div class="row">
           <div class="col-sm-10 col-lg-8 text-left">
             <h5 class="text-primary text-uppercase mb-3 animated slideInDown">
-                Make your own migration 
+              Make your own migration 
             </h5>
             <h1 class="display-3 text-white animated slideInDown">
-                Hijrah Online Academy (migration)
+              Hijrah Online Academy (migration)
             </h1>
             <p class="fs-5 text-white mb-4 pb-2">
               حَدَّثَنَا حُمَيْدُ بْنُ مَسْعَدَةَ، حَدَّثَنَا جَعْفَرُ بْنُ
@@ -39,14 +39,30 @@
   </div>
   <!-- Video Background End -->
 </template>
-  
-  <script>
+
+<script>
 export default {
-  // Remove any unused imports related to the carousel
+  mounted() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      const video = this.$refs.backgroundVideo;
+      if (window.innerWidth <= 768) {
+        video.pause(); // Pause the video on mobile view
+      } else {
+        video.play();  // Play the video on larger screens
+      }
+    }
+  }
 };
 </script>
-  
-  <style scoped>
+
+<style scoped>
 .video-background {
   position: relative;
   width: 100%;
@@ -80,4 +96,3 @@ export default {
   color: #007bff; /* Primary color for text */
 }
 </style>
-  

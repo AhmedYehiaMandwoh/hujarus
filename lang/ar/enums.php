@@ -10,6 +10,7 @@ return [
         \App\Enums\ModuleNameEnum::CLIENTS->value=>'العملاء',
         \App\Enums\ModuleNameEnum::CATEGORIES->value => 'السمات',
         \App\Enums\ModuleNameEnum::COURSES->value => 'الكورسات',
+        \App\Enums\ModuleNameEnum::TESTIMONIALS->value => 'الاراء',
         \App\Enums\ModuleNameEnum::SPONSORS->value=>'الراعاة',
         \App\Enums\ModuleNameEnum::ENROLCLIENTS->value => 'طلبات العملاء',
         \App\Enums\ModuleNameEnum::OFFERS->value=>'العروض',

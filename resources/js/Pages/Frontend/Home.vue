@@ -6,7 +6,7 @@
         <Aboutus />
         <!-- <Courses /> -->
         <!-- <Instructors /> -->
-        <Testimonial />
+        <Testimonial :testimonials="testimonialsData"/>
       </div>
 
   </template>
@@ -24,6 +24,7 @@
     name: 'Home',
   props: {
     categories: Array,  // Accept categories data as a prop
+    testimonialsData: Array,  // Accept categories data as a prop
   },
     components: {
       Carousel,

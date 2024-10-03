@@ -130,6 +130,20 @@ Route::group([
 
             });
         });
+         // testimonials 
+        Route::group(['prefix' => 'testimonials','as'=>'testimonials.'],function (){
+            Route::get('/',\App\Actions\Testimonials\TestimonialsIndexAction::class)->name('index');
+            Route::get('/create',\App\Actions\Testimonials\TestimonialsCreateAction::class)->name('create');
+            Route::post('/store',\App\Actions\Testimonials\TestimonialsStoreAction::class)->name('store');
+            Route::post('/{testimonial}',\App\Actions\Testimonials\TestimonialsUpdateAction::class)->name('update');
+            Route::delete('/{testimonial}',\App\Actions\Testimonials\TestimonialsDeleteAction::class)->name('delete');
+
+            Route::group(['prefix' => 'profile/{testimonial}', 'as' => 'profile.'], function () {
+                Route::get('/', [\App\Actions\Testimonials\TestimonialsProfileAction::class, 'viewMainData'])->name('main-data');
+                Route::get('/edit', [\App\Actions\Testimonials\TestimonialsProfileAction::class, 'viewEdit'])->name('edit');
+
+            });
+        });
 
         // Offers
             Route::group(['prefix' => 'offers','as'=>'offers.'],function (){

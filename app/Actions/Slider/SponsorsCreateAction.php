@@ -15,7 +15,7 @@ class SliderCreateAction extends BaseAction
 
         $this->breadcrumb([
             ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::Slider), 'url' => route('Slider.index')],
-            ['label' => __('base.create_sponsor'), 'url' => route('Slider.create')],
+            ['label' => __('base.create'), 'url' => route('Slider.create')],
         ]);
         return Inertia::render('Slider/SliderFormCreateUpdate');
     }

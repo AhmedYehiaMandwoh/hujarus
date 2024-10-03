@@ -17,6 +17,7 @@ enum ModuleNameEnum: string
     case SPONSORS = 'sponsors';
     case COURSES = 'courses';
     case CATEGORIES = 'categories';
+    case TESTIMONIALS = 'testimonials';
     case ENROLCLIENTS = 'enroll_clients';
     case SETTINGS = 'settings';
     case CLIENTS = 'clients';

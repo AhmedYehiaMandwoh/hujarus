@@ -47,6 +47,13 @@ enum Abilities: string
     case M_CATEGORIES_UPDATE = 'm_categories_update';
     case M_CATEGORIES_DELETE = 'm_categories_delete';
     case M_CATEGORIES_MAIN_DATA = 'm_categories_main_data';
+    // TESTIMONIALS
+    case M_TESTIMONIALS_INDEX = 'm_testimonials_index';
+    case M_TESTIMONIALS_INDEX_EXPORT = 'm_testimonials_index_export';
+    case M_TESTIMONIALS_CREATE = 'm_testimonials_create';
+    case M_TESTIMONIALS_UPDATE = 'm_testimonials_update';
+    case M_TESTIMONIALS_DELETE = 'm_testimonials_delete';
+    case M_TESTIMONIALS_MAIN_DATA = 'm_testimonials_main_data';
     // ENROLCLIENTS
     case M_ENROLCLIENTS_INDEX = 'm_enroll_clients_index';
     case M_ENROLCLIENTS_INDEX_EXPORT = 'm_enroll_clients_index_export';
@@ -124,6 +131,13 @@ enum Abilities: string
         ['key' => self::M_CATEGORIES_UPDATE, 'module' => ModuleNameEnum::CATEGORIES],
         ['key' => self::M_CATEGORIES_DELETE, 'module' => ModuleNameEnum::CATEGORIES],
         ['key' => self::M_CATEGORIES_MAIN_DATA, 'module' => ModuleNameEnum::CATEGORIES],
+
+        ['key' => self::M_TESTIMONIALS_INDEX, 'module' => ModuleNameEnum::TESTIMONIALS],
+        ['key' => self::M_TESTIMONIALS_INDEX_EXPORT, 'module' => ModuleNameEnum::TESTIMONIALS],
+        ['key' => self::M_TESTIMONIALS_CREATE, 'module' => ModuleNameEnum::TESTIMONIALS],
+        ['key' => self::M_TESTIMONIALS_UPDATE, 'module' => ModuleNameEnum::TESTIMONIALS],
+        ['key' => self::M_TESTIMONIALS_DELETE, 'module' => ModuleNameEnum::TESTIMONIALS],
+        ['key' => self::M_TESTIMONIALS_MAIN_DATA, 'module' => ModuleNameEnum::TESTIMONIALS],
 
         ['key' => self::M_ENROLCLIENTS_INDEX, 'module' => ModuleNameEnum::ENROLCLIENTS],
         ['key' => self::M_ENROLCLIENTS_INDEX_EXPORT, 'module' => ModuleNameEnum::ENROLCLIENTS],
