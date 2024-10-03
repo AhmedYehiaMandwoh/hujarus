@@ -5,7 +5,7 @@
         <Categories :categories="categories" />
         <Aboutus />
         <!-- <Courses /> -->
-        <Instructors />
+        <!-- <Instructors /> -->
         <Testimonial />
       </div>
 

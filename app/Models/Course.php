@@ -9,6 +9,14 @@ use App\Traits\{MorphModelTriggerTrait, SearchTrait, ModelDateTextTrait};
 
 /**
  * @property int $id
+ * @property string $title
+ * @property string $description
+ * @property float $price
+ * @property string $instructor
+ * @property string $duration
+ * @property int $student_count
+ * @property bool $is_active
+ * @property string|null $avatar
  */
 class Course extends BaseModel
 {
@@ -22,7 +30,8 @@ class Course extends BaseModel
         'duration', 
         'student_count', 
         'is_active', 
-        'avatar' // If you want to include an image for the course
+        'avatar',
+        'category_id', // Added category_id for foreign key relation
     ];
 
     protected $appends = [
@@ -32,12 +41,29 @@ class Course extends BaseModel
         'deleted_at_text'
     ];
 
+    /**
+     * Accessor for avatar URL.
+     */
     protected function avatarUrl(): Attribute
     {
         return Attribute::make(
-            get: function () {
-                return $this->avatar ? StorageService::publicUrl($this->avatar) : asset('images/no-image.png');
-            },
+            get: fn () => $this->avatar ? StorageService::publicUrl($this->avatar) : asset('images/no-image.png'),
         );
+    }
+
+    /**
+     * Relation to Category model.
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * Scope for active courses.
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
     }
 }

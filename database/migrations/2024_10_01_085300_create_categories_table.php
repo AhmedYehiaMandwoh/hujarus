@@ -23,6 +23,7 @@ return new class extends Migration
 
             // Category specific fields
             $table->string('title');                  // Category title
+            $table->string('slug');                  // Category slug
             $table->text('description')->nullable();  // Category description
             $table->boolean('is_active')->default(true); // Active status
             $table->string('avatar')->nullable();

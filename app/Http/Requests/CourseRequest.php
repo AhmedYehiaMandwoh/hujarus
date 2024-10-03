@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class CategoryRequest extends FormRequest
+class CourseRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -19,21 +19,22 @@ class CategoryRequest extends FormRequest
         return [
             'title' => [
                 'required', new SmallTextRule(),
-                Rule::unique('categories', 'title')
-                    ->ignore($request->id)
-            ],
-            'slug' => [
-                'required', new SmallTextRule(),
-                Rule::unique('categories', 'slug')
+                Rule::unique('courses', 'title') // Updated to 'courses' table
                     ->ignore($request->id)
             ],
             'description' => [
                 'nullable', new LargeTextRule()
             ],
             'avatar' => ['nullable', new ImageRule()],
-            'icon' => 'required',
+            'category_id' => [
+                'required', 
+                Rule::exists('categories', 'id') // Ensures category exists in 'categories' table
+            ],
+            'price' => 'required|numeric|min:0', // Ensure price is numeric and non-negative
+            'instructor' => 'required|string|max:255', // Validate instructor name
+            'duration' => 'required|string|max:255', // Validate duration
+            'student_count' => 'nullable|integer|min:0', // Ensure student_count is a non-negative integer
             'is_active' => 'nullable|boolean',
-
         ];
     }
 }

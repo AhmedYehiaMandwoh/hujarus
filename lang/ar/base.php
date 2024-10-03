@@ -175,6 +175,13 @@ return [
     'class_duration' => 'مدة الدرس',
     'preferred_teacher' => 'المعلم المفضل',
     'goals' => 'الأهداف',
+    'categories' => 'السمات',
+    'price' => 'السعر',
+    'instructor' => 'المحاضر',
+    'duration' => 'المدة',
+    'student_count' => 'عدد الطلاب',
+    'slug' => 'شعار',
+
 
 
 ];

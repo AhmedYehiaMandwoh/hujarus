@@ -19,3 +19,7 @@ nvm use --lts
 npm run build
 
 
+php artisan migrate:refresh --path=database/migrations/2024_10_01_085300_create_categories_table.php
+
+
+

@@ -5,7 +5,7 @@ namespace App\Actions\Courses;
 
 use App\Classes\{Abilities, BaseAction};
 use App\Enums\{IsActiveEnum, ModuleNameEnum, IconsEnum};
-use App\Models\Course;
+use App\Models\{Course, Category};
 use Inertia\Inertia;
 
 class CoursesIndexAction extends BaseAction
@@ -30,7 +30,7 @@ class CoursesIndexAction extends BaseAction
         return [
             'form_data' => [
                 'is_active' => IsActiveEnum::getOptionsData(),
-                'icons' => IconsEnum::getOptionsData(),
+                'categories' => Category::where('is_active', true)->get(),
             ]
         ];
     }

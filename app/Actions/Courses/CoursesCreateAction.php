@@ -17,8 +17,8 @@ class CoursesCreateAction extends BaseAction
             ['label' => ModuleNameEnum::getTrans(ModuleNameEnum::COURSES), 'url' => route('courses.index')],
             ['label' => __('base.create_sponsor'), 'url' => route('courses.create')],
         ]);
-        $icons = CoursesIndexAction::make()->getCreateUpdateData()['form_data']['icons'];
-        return Inertia::render('Courses/CoursesFormCreateUpdate', compact('icons'));
+        $categories = CoursesIndexAction::make()->getCreateUpdateData()['form_data']['categories'];
+        return Inertia::render('Courses/CoursesFormCreateUpdate', compact('categories'));
     }
 
 }

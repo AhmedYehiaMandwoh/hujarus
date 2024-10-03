@@ -14,8 +14,7 @@
               :src="testimonial.image"
               style="width: 80px; height: 80px;"
             />
-            <h5 class="mb-0">{{ testimonial.name }}</h5>
-            <p>{{ testimonial.profession }}</p>
+            <h5 class="mb-3">{{ testimonial.name }}</h5>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">{{ testimonial.text }}</p>
             </div>
@@ -50,25 +49,21 @@ export default defineComponent({
         {
           image: '/theme-front/img/testimonial-1.jpg',
           name: 'Client Name 1',
-          profession: 'Profession 1',
           text: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.',
         },
         {
           image: '/theme-front/img/testimonial-2.jpg',
           name: 'Client Name 2',
-          profession: 'Profession 2',
           text: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.',
         },
         {
           image: '/theme-front/img/testimonial-3.jpg',
           name: 'Client Name 3',
-          profession: 'Profession 3',
           text: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.',
         },
         {
           image: '/theme-front/img/testimonial-4.jpg',
           name: 'Client Name 4',
-          profession: 'Profession 4',
           text: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.',
         },
       ],

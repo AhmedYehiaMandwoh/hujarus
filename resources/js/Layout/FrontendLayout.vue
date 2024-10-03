@@ -6,22 +6,28 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
+
+        
         <!-- Spinner End -->
 
         <!-- Main Content -->
         <div v-else>
             <Header/>
+            <Whats/>
             <Navbar/>
             <slot/>
             <Footer/>
             <NotificationAlert/>
         </div>
+
+        
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import NotificationAlert from "@/Layout/NotificationAlert.vue";
+import Whats from "@/Layout/Frontend/Whats.vue";  // Create a separate Navbar component
 import Navbar from "@/Layout/Frontend/Navbar.vue";  // Create a separate Navbar component
 import Footer from "@/Layout/Frontend/Footer.vue";  // Create a separate Footer component
 import Header from "./Frontend/Header.vue";

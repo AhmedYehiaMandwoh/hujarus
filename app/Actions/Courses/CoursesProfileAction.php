@@ -10,7 +10,7 @@ class CoursesProfileAction extends BaseAction
 {
     protected Abilities $ability = Abilities::M_COURSES_MAIN_DATA;
 
-    public function viewMainData(Course $Course): \Inertia\Response
+    public function viewMainData(Course $course): \Inertia\Response
     {
         $this->setProfileTab('MainDataTab', $course);
         $data['row'] = $course;
@@ -22,6 +22,7 @@ class CoursesProfileAction extends BaseAction
         $this->setProfileTab('EditTab', $course, __('base.edit'));
         $data = CoursesIndexAction::make()->getCreateUpdateData();
         $data['row'] = $course;
+
         return Inertia::render('Courses/Profile/Index', compact('data'));
     }
 

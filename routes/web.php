@@ -25,6 +25,8 @@ Route::group([
         Route::get('/',\App\Actions\Enroll\EnrollIndexAction::class)->name('index');
         Route::post('/store',\App\Actions\Enroll\EnrollStoreAction::class)->name('store');
     });
+    Route::get('/categories-courses/{slug}',\App\Actions\CoursesWithCat\CoursesCatIndexAction::class)->name('categories-courses');
+
 
 
 

@@ -173,4 +173,10 @@ return [
     'class_duration' => 'Class Duration',
     'preferred_teacher' => 'Preferred Teacher',
     'goals' => 'Goals',
+    'categories' => 'Categories',
+    'price' => 'Price',
+    'instructor' => 'Instructor',
+    'duration' => 'Duration',
+    'student_count' => 'Student Count',
+    'slug' => 'Slug',
 ];

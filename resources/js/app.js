@@ -55,7 +55,7 @@ createInertiaApp({
         );
         page.then((module) => {
             // Check if layout is FrontendLayout
-            if (name.startsWith('Frontend/Home')  || name.startsWith('Frontend/Enroll')) {
+            if (name.startsWith('Frontend/Home')  || name.startsWith('Frontend/Enroll') || name.startsWith('Frontend/Course')) {
                 module.default.layout = FrontendLayout;
                 loadFrontendStyles(); // Load styles for FrontendLayout
                 return null;

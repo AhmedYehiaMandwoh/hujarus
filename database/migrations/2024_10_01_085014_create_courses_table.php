@@ -26,7 +26,7 @@ return new class extends Migration
 
             // Course specific fields
             $table->string('title');
-            $table->text('description');
+            $table->longText('description');
             $table->decimal('price', 10, 2);
             $table->string('instructor');
             $table->string('duration');

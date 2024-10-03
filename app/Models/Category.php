@@ -15,6 +15,7 @@ class Category extends BaseModel
 
     protected $fillable = [
         'title',
+        'slug',
         'description',
         'avatar',
         'icon',

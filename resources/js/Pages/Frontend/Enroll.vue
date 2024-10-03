@@ -343,7 +343,7 @@ export default {
 
 
 <style>
-/* Set background color #c4990c*/ 
+/* Set background color #efba00*/ 
 .main-bg {
   background-color: #d4b03a1b;
 }
