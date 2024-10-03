@@ -20,7 +20,7 @@
   <script setup>
   import { ref, onMounted } from 'vue';
   
-  const pageTitle = ref('eLEARNING - eLearning HTML Template'); // Change this dynamically if needed
+  const pageTitle = ref('Hijrah Online Academy'); // Change this dynamically if needed
   
   onMounted(() => {
     // Dynamically set the document title
