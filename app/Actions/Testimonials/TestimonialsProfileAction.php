@@ -25,7 +25,7 @@ class TestimonialsProfileAction extends BaseAction
         return Inertia::render('Testimonials/Profile/Index', compact('data'));
     }
 
-    public function setProfileTab($tap_component, Category &$row, $title = null): void
+    public function setProfileTab($tap_component, Testimonial  &$row, $title = null): void
     {
         $main_data_url = ['label' => $row->name, 'url' => route('testimonials.profile.main-data', $row)];
 
