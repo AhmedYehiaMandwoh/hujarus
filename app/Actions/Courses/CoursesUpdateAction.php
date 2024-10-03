@@ -5,14 +5,14 @@ namespace App\Actions\Courses;
 use App\Classes\{Abilities, BaseAction};
 use App\Enums\StoragePathEnum;
 use App\Http\Requests\CourseRequest;
-use App\Models\course;
+use App\Models\Course;
 use App\Services\StorageService;
 
 class CoursesUpdateAction extends BaseAction
 {
     protected Abilities $ability = Abilities::M_COURSES_UPDATE;
 
-    public function handle(course $course, CourseRequest $request)
+    public function handle(Course $course, CourseRequest $request)
     {
         $validated_data = $request->validated();
         if (data_get($validated_data, 'avatar')) {
