@@ -21,7 +21,7 @@ class TestimonialsUpdateAction extends BaseAction
             unset($validated_data['avatar']);
         }
 
-        $Testimonial->update($validated_data);
+        $testimonial->update($validated_data);
         $this->makeSuccessSessionMessage();
         return back();
     }
