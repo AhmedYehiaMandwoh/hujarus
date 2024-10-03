@@ -6,7 +6,7 @@
                 class="flex-col flex-none items-center pb-5 pt-2 flex">
                 <a class="text-primary-500 cursor-pointer box-border hover:text-yellow-700"
                    style="text-decoration: none; transition: color 0.2s ease 0s, background-color 0.2s ease 0s; direction: rtl;">
-                    <img alt="Logo" :src="asset('images/logofull.jpg')"
+                    <img alt="Logo" :src="asset('/theme-front/img/logo.png')"
                          class="m-auto w-auto px-2 align-middle box-border max-h-[70px]"/>
                 </a>
             </div>
