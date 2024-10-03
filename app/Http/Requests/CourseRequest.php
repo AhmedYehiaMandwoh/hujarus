@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\{SmallTextRule, ImageRule, LargeTextRule};
+use App\Rules\{SmallTextRule, ImageRule, LongTextRule};
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -23,7 +23,7 @@ class CourseRequest extends FormRequest
                     ->ignore($request->id)
             ],
             'description' => [
-                'nullable', new LargeTextRule()
+                'nullable', new LongTextRule()
             ],
             'avatar' => ['nullable', new ImageRule()],
             'category_id' => [

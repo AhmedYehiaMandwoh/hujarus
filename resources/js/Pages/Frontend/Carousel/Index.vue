@@ -24,16 +24,14 @@
               Messenger of Allah (ﷺ) said: “Worship during the time of bloodshed
               is like emigrating to me.”Sunan Ibn Majah 3985
             </p>
-            <a
-              href="#"
+            <Link
+              href="/enroll"
               class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
-              >Enroll Now</a
-            >
-            <a
-              href="#"
+              >Enroll Now</Link>
+            <Link
+              href="/enroll"
               class="btn btn-light py-md-3 px-md-5 animated slideInRight"
-              ><i class="fa fa-link"></i> Free Trial</a
-            >
+              ><i class="fa fa-link"></i> Free Trial</Link>
           </div>
         </div>
       </div>

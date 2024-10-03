@@ -1,6 +1,6 @@
 <template lang="">
   <!-- Categories Start -->
-  <div class="container-xxl py-5">
+  <div id="categories" class="container-xxl py-5">
       <div class="container">
           <div class="row g-4">
               <!-- Loop through the categories array and render each one -->
@@ -12,8 +12,8 @@
               >
                   <div 
                       class="service-item text-center pt-3" 
-                      @click="redirectToCategory(category.slug)"  
                   >
+                  <Link :href="`/categories-courses/${category.slug}`">
                       <div class="p-4">
                           <!-- Render icon dynamically -->
                           <i :class="`fa fa-3x ${category.icon} text-primary mb-4`"></i>
@@ -21,6 +21,7 @@
                           <h5 class="mb-3">{{ category.title }}</h5>
                           <p>{{ category.description }}</p>
                       </div>
+                    </Link>
                   </div>
               </div>
           </div>
@@ -31,7 +32,7 @@
 
 <script>
 import { Inertia } from '@inertiajs/inertia';
-
+import { Link } from '@inertiajs/vue3';
 export default {
   props: {
       categories: {
@@ -39,11 +40,8 @@ export default {
           required: true,  // Ensure that categories are passed to the component
       },
   },
-  methods: {
-      redirectToCategory(slug) {
-          // Use Inertia for the navigation
-          Inertia.visit(`/categories-courses/${slug}`);
-      },
+  components: {
+    Link
   },
 }
 </script>

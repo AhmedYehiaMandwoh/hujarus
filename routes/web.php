@@ -26,6 +26,7 @@ Route::group([
         Route::post('/store',\App\Actions\Enroll\EnrollStoreAction::class)->name('store');
     });
     Route::get('/categories-courses/{slug}',\App\Actions\CoursesWithCat\CoursesCatIndexAction::class)->name('categories-courses');
+    Route::get('/categories-courses/{slug}/course/{id}',\App\Actions\CoursesWithCat\CourseCatDetailsAction::class)->name('course-details');
 
 
 

@@ -6,17 +6,20 @@ use App\Classes\BaseAction;
 use App\Models\{Course, Category}; // Change from Service to Category
 use Inertia\Inertia;
 
-class CoursesCatIndexAction extends BaseAction
+class CourseCatDetailsAction extends BaseAction
 {
-    public function handle($slug)
+    public function handle($slug,$id)
     {
         // Fetch categories from the database
         $category = Category::where('slug', $slug)->where('is_active', true)->first();
-        $courses = Course::where('category_id', $category->id)->where('is_active', true)->get();
+        $course = Course::where('category_id', $category->id)
+        ->where('id', $id)
+        ->where('is_active', true)
+        ->first();
         // Return categories to home.vue as props
-        return Inertia::render('Frontend/Courses/Index', [
+        return Inertia::render('Frontend/Courses/Details', [
             'category' => $category,
-            'courses' => $courses
+            'course' => $course
         ]);
     }
 }
