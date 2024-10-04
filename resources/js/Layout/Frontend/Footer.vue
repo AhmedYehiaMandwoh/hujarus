@@ -4,9 +4,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="#aboutus">About Us</a>
-                    <a class="btn btn-link" href="#">Privacy Policy</a>
-                    <a class="btn btn-link" href="#">Terms & Condition</a>
+                    <a class="btn btn-link" href="/#aboutus">About Us</a>
+                    <Link href="/privacy-policy" class="btn btn-link">Privacy Policy </Link>
+                     <Link href="/terms-and-conditions" class="btn btn-link">Terms & Condition</Link>
                 </div>
                 <div class="col-md-4">
                     <h4 class="text-white mb-3">Contact</h4>
@@ -59,7 +59,6 @@ const settingsObject = computed(() => {
     }, {});
 });
 
-console.log(settingsObject.value); // This will log the transformed settings object
 </script>
 
 <style scoped>
