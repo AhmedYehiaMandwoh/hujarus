@@ -84,8 +84,16 @@ return [
         \App\Enums\HospitalityProviderTypesEnum::CAFE->value => 'Cafe',
     ],
     'SettingsKeysEnum' => [
-        \App\Enums\SettingsKeysEnum::WHEEL_ROTATION_TIME->value => 'Time Difference Between Wheel Rotations (in hours)',
+        \App\Enums\SettingsKeysEnum::PRIVACY_POLICY->value => 'Privacy Policy',
         \App\Enums\SettingsKeysEnum::TERMS_AND_CONDITIONS->value => 'Terms and Conditions',
+        \App\Enums\SettingsKeysEnum::LOCATION->value => 'Location',
+        \App\Enums\SettingsKeysEnum::PHONE->value => 'Phone',
+        \App\Enums\SettingsKeysEnum::EMAIL->value => 'Email',
+        \App\Enums\SettingsKeysEnum::FACEBOOK->value => 'Facebook',
+        \App\Enums\SettingsKeysEnum::YOUTUBE->value => 'Youtube',
+        \App\Enums\SettingsKeysEnum::INSTGRAM->value => 'Instgram',
+        \App\Enums\SettingsKeysEnum::TIKTOK->value => 'Tiktok',
+        
     ],
     'ClientOfferStatusEnum' => [
         \App\Enums\ClientOfferStatusEnum::USED->value => 'Used',

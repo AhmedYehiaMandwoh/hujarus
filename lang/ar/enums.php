@@ -84,10 +84,18 @@ return [
         \App\Enums\HospitalityProviderTypesEnum::EXHIBITION->value=>'معرض',
         \App\Enums\HospitalityProviderTypesEnum::CAFE->value=>'مقهى',
     ],
-    'SettingsKeysEnum'=>[
-        \App\Enums\SettingsKeysEnum::WHEEL_ROTATION_TIME->value=>'الفرق بين مدة دوران العجلة (بالساعة)',
-        \App\Enums\SettingsKeysEnum::TERMS_AND_CONDITIONS->value=>'الشروط والأحكام',
+   'SettingsKeysEnum' => [
+        \App\Enums\SettingsKeysEnum::PRIVACY_POLICY->value => 'سياسة الخصوصية',
+        \App\Enums\SettingsKeysEnum::TERMS_AND_CONDITIONS->value => 'الشروط والأحكام',
+        \App\Enums\SettingsKeysEnum::LOCATION->value => 'الموقع',
+        \App\Enums\SettingsKeysEnum::PHONE->value => 'الهاتف',
+        \App\Enums\SettingsKeysEnum::EMAIL->value => 'البريد الإلكتروني',
+        \App\Enums\SettingsKeysEnum::FACEBOOK->value => 'فيسبوك',
+        \App\Enums\SettingsKeysEnum::YOUTUBE->value => 'يوتيوب',
+        \App\Enums\SettingsKeysEnum::INSTGRAM->value => 'إنستجرام',
+        \App\Enums\SettingsKeysEnum::TIKTOK->value => 'تيك توك',
     ],
+
     'ClientOfferStatusEnum'=>[
         \App\Enums\ClientOfferStatusEnum::USED->value=>'مستخدمة',
         \App\Enums\ClientOfferStatusEnum::SAVED->value=>'محفوظة',

@@ -39,6 +39,10 @@ return [
     \App\Classes\Abilities::M_ENROLCLIENTS_INDEX->value => 'View',
     \App\Classes\Abilities::M_ENROLCLIENTS_INDEX_EXPORT->value => 'Export to Excel',
 
+    
+
+    \App\Classes\Abilities::M_SETTINGS_INDEX->value => 'View',
+    \App\Classes\Abilities::M_SETTINGS_UPDATE->value => 'Edit',
 
 
 ];

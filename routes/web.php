@@ -27,6 +27,7 @@ Route::group([
     });
     Route::get('/categories-courses/{slug}',\App\Actions\CoursesWithCat\CoursesCatIndexAction::class)->name('categories-courses');
     Route::get('/categories-courses/{slug}/course/{id}',\App\Actions\CoursesWithCat\CourseCatDetailsAction::class)->name('course-details');
+    Route::get('/getsettings',\App\Actions\HomePage\SettingsAction::class)->name('getsettings');
 
 
 

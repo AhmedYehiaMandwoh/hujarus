@@ -6,41 +6,44 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-
-        
         <!-- Spinner End -->
 
         <!-- Main Content -->
         <div v-else>
-            <Header/>
-            <Whats/>
-            <Navbar/>
-            <slot/>
-            <Footer/>
-            <NotificationAlert/>
+            <Header />
+            <Whats />
+            <Navbar />
+            <slot />
+            <Footer :settings="settings" />
+            <NotificationAlert />
         </div>
-
-        
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import NotificationAlert from "@/Layout/NotificationAlert.vue";
-import Whats from "@/Layout/Frontend/Whats.vue";  // Create a separate Navbar component
-import Navbar from "@/Layout/Frontend/Navbar.vue";  // Create a separate Navbar component
-import Footer from "@/Layout/Frontend/Footer.vue";  // Create a separate Footer component
+import Whats from "@/Layout/Frontend/Whats.vue";
+import Navbar from "@/Layout/Frontend/Navbar.vue";
+import Footer from "@/Layout/Frontend/Footer.vue";
 import Header from "./Frontend/Header.vue";
 
-// Loading state
+const settings = ref({});
 const loading = ref(true);
 
-// Simulate a loading process
-onMounted(() => {
-    // Simulate a network request or some async operation
-    setTimeout(() => {
-        loading.value = false; // Set loading to false after the loading is complete
-    }, 2000); // Adjust the duration as needed
+// Fetch settings from the server
+onMounted(async () => {
+    try {
+        const response = await fetch('/getsettings'); // Adjust the URL if needed
+        const data = await response.json();
+        console.log(data);
+        
+        settings.value = data.settings;
+    } catch (error) {
+        console.error('Error fetching settings:', error);
+    } finally {
+        loading.value = false; // Stop loading
+    }
 });
 </script>
 

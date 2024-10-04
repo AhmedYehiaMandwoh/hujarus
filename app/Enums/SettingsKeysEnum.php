@@ -8,7 +8,13 @@ enum SettingsKeysEnum: string
 {
     use EnumOptionsTrait;
 
-    case OFFER_MAX_PER_HOUR = "offer_max_per_hour";
-    case WHEEL_ROTATION_TIME = "wheel_rotation_time";
+    case PRIVACY_POLICY = "privacy_policy";
     case TERMS_AND_CONDITIONS = "terms_and_conditions";
+    case LOCATION = "location";
+    case PHONE = "phone";
+    case EMAIL = "email";
+    case FACEBOOK = "facebook";
+    case YOUTUBE = "youtube";
+    case INSTGRAM = "instgram";
+    case TIKTOK = "tiktok";
 }

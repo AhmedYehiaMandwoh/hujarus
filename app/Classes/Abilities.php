@@ -15,6 +15,9 @@ enum Abilities: string
     case M_USERS_MAIN_DATA = 'M_USERS_MAIN_DATA';
     case M_USERS_ADD_CUSTOM_ABILITY = 'M_USERS_ADD_CUSTOM_ABILITY';
 
+        // SETTINGS
+        case M_SETTINGS_INDEX = 'm_settings_index';
+        case M_SETTINGS_UPDATE = 'm_settings_update';
 
     // CATEGORIES
     case M_CATEGORIES_INDEX = 'm_categories_index';
@@ -93,8 +96,10 @@ enum Abilities: string
         ['key' => self::M_COURSES_UPDATE, 'module' => ModuleNameEnum::COURSES],
         ['key' => self::M_COURSES_DELETE, 'module' => ModuleNameEnum::COURSES],
         ['key' => self::M_COURSES_MAIN_DATA, 'module' => ModuleNameEnum::COURSES],
-
-
+        
+        
+        ['key' => self::M_SETTINGS_INDEX, 'module' => ModuleNameEnum::SETTINGS],
+        ['key' => self::M_SETTINGS_UPDATE, 'module' => ModuleNameEnum::SETTINGS],
 
     ];
 

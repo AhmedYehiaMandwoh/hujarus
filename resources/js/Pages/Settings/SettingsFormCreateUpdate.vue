@@ -1,8 +1,7 @@
 <template>
     <form @submit.prevent="submit()">
         <div class="grid md:grid-cols-1 gap-3 mt-2">
-            <floating-input v-if="row.key!=='terms_and_conditions'" type="number" required :form="el_form" name="value"/>
-            <floating-textarea required :form="el_form" name="value" v-else/>
+            <floating-textarea required :form="el_form" name="value"/>
 
             <div class="">
                 <submit-button :text="$t('base.save')" :form="el_form"/>
