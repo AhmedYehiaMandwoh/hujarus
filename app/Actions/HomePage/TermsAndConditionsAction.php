@@ -10,11 +10,13 @@ class TermsAndConditionsAction extends BaseAction
 {
     public function handle()
     {
+        // Fetch the terms and conditions from the settings
         $terms = Setting::where('key', 'terms_and_conditions')->first();
 
-        // Return categories to home.vue as props
+        // Return the Inertia response with the terms and title
         return Inertia::render('Frontend/Settings/Terms', [
-            'terms' => $terms
+            'terms' => $terms,
+            'title' => __('base.terms_and_conditions') // Pass the title to the Inertia component
         ]);
     }
 }

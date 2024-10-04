@@ -1,7 +1,7 @@
 <template>
     <header>
       <meta charset="utf-8">
-      <title>{{ pageTitle }}</title>
+      <title> {{ pageTitle }} </title>
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
       <meta name="keywords" content="your, keywords, here">
       <meta name="description" content="your description here">
