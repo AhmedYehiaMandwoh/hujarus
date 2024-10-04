@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="/#aboutus">About Us</a>
+                    <Link class="btn btn-link" href="/#aboutus">About Us</Link>
                     <Link href="/privacy-policy" class="btn btn-link">Privacy Policy </Link>
                      <Link href="/terms-and-conditions" class="btn btn-link">Terms & Condition</Link>
                 </div>
