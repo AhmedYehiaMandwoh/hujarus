@@ -28,7 +28,7 @@ class CourseRequest extends FormRequest
             'avatar' => ['nullable', new ImageRule()],
             'category_id' => [
                 'required', 
-                Rule::exists('categories', 'id') // Ensures category exists in 'categories' table
+                Rule::exists('courses', 'id') // Ensures category exists in 'categories' table
             ],
             'price' => 'required|numeric|min:0', // Ensure price is numeric and non-negative
             'instructor' => 'required|string|max:255', // Validate instructor name
