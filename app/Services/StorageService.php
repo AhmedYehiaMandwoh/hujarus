@@ -22,7 +22,7 @@ class StorageService
             self::delete($oldFileToDeletePath);
         }
         if ($compressImage && str_starts_with($file->getMimeType(), 'image')) {
-            $_path = $path . '/app/public/' . ($fileName ?: $file->hashName());
+            $_path = $path . '/' . ($fileName ?: $file->hashName());
 //            $originalSize = [$image->getWidth(), $image->getHeight()];
 //            $afterSize = [$image->getWidth(), $image->getHeight()];
             //dd(implode('x', $originalSize), implode('x', $afterSize));
@@ -70,7 +70,7 @@ class StorageService
      */
     final public static function publicUrl(?string $path): ?string
     {
-        return $path ? Storage::url('app/public/'.$path) : null;
+        return $path ? Storage::url($path) : null;
     }
 
     /**
