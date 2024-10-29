@@ -23,7 +23,7 @@ class CourseRequest extends FormRequest
                     ->ignore($request->id)
             ],
             'description' => [
-                'nullable', new LongTextRule()
+                'required', new LongTextRule()
             ],
             'avatar' => ['nullable', new ImageRule()],
             'category_id' => [
