@@ -18,9 +18,7 @@ class CourseRequest extends FormRequest
     {
         return [
             'title' => [
-                'required', new SmallTextRule(),
-                Rule::unique('courses', 'title') // Updated to 'courses' table
-                    ->ignore($request->id)
+                'required', new SmallTextRule()
             ],
             'description' => [
                 'required', new LongTextRule()

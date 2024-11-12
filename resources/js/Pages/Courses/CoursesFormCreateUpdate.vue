@@ -1,18 +1,13 @@
 <template>
-    <ElPanelCreate :is-transparent="false" v-if="$page.url == '/courses/create'" />
+    <ElPanelCreate :is-transparent="false" v-if="$page.url === '/courses/create'" />
     <form @submit.prevent="submit()">
         <div class="grid md:grid-cols-2 gap-3 p-4">
             <div class="col-span-full w-[150px]">
                 <AvatarInput :form="el_form" :old-image-preview="el_form.avatar_url" name="avatar" />
             </div>
             <floating-input required :form="el_form" name="title" />
-            <floating-dropdown 
-                :form="el_form" 
-                name="category_id" 
-                :required="1"
-                :options="categoriesDropdownOptions" 
-                :label="$t('base.categories')" 
-            />
+            <floating-dropdown :form="el_form" name="category_id" :required="1" :options="categoriesDropdownOptions"
+                :label="$t('base.categories')" />
             <floating-input required :form="el_form" name="price" type="number" :label="$t('base.price')" />
             <floating-input required :form="el_form" name="instructor" />
             <floating-input required :form="el_form" name="duration" />
@@ -23,7 +18,6 @@
 
             <floating-dropdown v-if="!is_create" :form="el_form" name="is_active" :required="1"
                 :options="formData.is_active" :label="$t('base.is_active')" />
-
             <div>
                 <submit-button :text="$t('base.save')" :form="el_form" />
             </div>
@@ -40,15 +34,16 @@ import AvatarInput from "@/Components/Form/AvatarInput.vue";
 import FloatingDropdown from "@/Components/Form/FloatingDropdown.vue";
 import ElPanelCreate from "@/Components/ElPanelCreate.vue";
 import Editor from 'primevue/editor';
+import { ref } from "vue";
 
 // Form data
 const props = defineProps({
     categories: {
         type: Array,
-        default: () => [] // Provide a default empty array
+        default: () => []
     },
     row: {
-        type: Object, // Change to Object for better type matching
+        type: Object,
         default: () => ({})
     },
     formData: {
@@ -59,14 +54,15 @@ const props = defineProps({
 
 const is_create = !props.row.id;
 const el_row = props.row;
+const descriptionVal = ref(el_row.description || ''); // Bind initial description
 
 const el_form = useForm({
     id: el_row.id,
     avatar: null,
     avatar_url: el_row.avatar_url ?? null,
     title: el_row.title ?? null,
-    description: el_row.description ?? null,
-    category_id: el_row.category_id ?? '', // Get category_id from row data
+    description: descriptionVal ?? null,
+    category_id: el_row.category_id ?? '',
     price: el_row.price ?? null,
     instructor: el_row.instructor ?? null,
     duration: el_row.duration ?? null,
@@ -94,7 +90,7 @@ if (is_create) {
 const submit = () => {
     el_form.post(is_create ? route('courses.store') : route('courses.update', el_form.id), {
         onSuccess: () => {
-            is_create && el_form.reset();
+            if (is_create) el_form.reset();
         },
     });
 };
