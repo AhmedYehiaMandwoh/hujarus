@@ -20,7 +20,11 @@ class RoleRequest extends FormRequest
     {
         return [
             'name' => ['required', new SmallTextRule(), Rule::unique('roles', 'name')->ignore($request->role?->id)],
-            'abilities.*' => [Rule::in(collect(Abilities::PERMISSIONS)->pluck('key.value')->toArray())]
+            'abilities' => ['nullable', 'array'], // Allow nullable or empty array
+            'abilities.*' => [
+                Rule::in(collect(Abilities::PERMISSIONS)->pluck('key.value')->toArray())
+            ],
         ];
     }
+    
 }

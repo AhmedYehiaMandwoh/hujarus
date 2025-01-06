@@ -12,12 +12,12 @@ enum Abilities: string
     case M_USERS_STORE = 'm_users_store';
     case M_USERS_UPDATE = 'm_users_update';
     case M_USERS_DELETE = 'm_users_delete';
-    case M_USERS_MAIN_DATA = 'M_USERS_MAIN_DATA';
-    case M_USERS_ADD_CUSTOM_ABILITY = 'M_USERS_ADD_CUSTOM_ABILITY';
+    case M_USERS_MAIN_DATA = 'm_users_main_data';
+    case M_USERS_ADD_CUSTOM_ABILITY = 'm_users_add_custom_ability';
 
-        // SETTINGS
-        case M_SETTINGS_INDEX = 'm_settings_index';
-        case M_SETTINGS_UPDATE = 'm_settings_update';
+    // SETTINGS
+    case M_SETTINGS_INDEX = 'm_settings_index';
+    case M_SETTINGS_UPDATE = 'm_settings_update';
 
     // CATEGORIES
     case M_CATEGORIES_INDEX = 'm_categories_index';
@@ -49,7 +49,7 @@ enum Abilities: string
 
 
 
-  //roles
+    //roles
     case M_ROLES_INDEX = 'm_roles_index';
     case M_ROLES_EXPORT = 'm_roles_export';
     case M_ROLES_DELETE = 'm_roles_delete';
@@ -96,8 +96,8 @@ enum Abilities: string
         ['key' => self::M_COURSES_UPDATE, 'module' => ModuleNameEnum::COURSES],
         ['key' => self::M_COURSES_DELETE, 'module' => ModuleNameEnum::COURSES],
         ['key' => self::M_COURSES_MAIN_DATA, 'module' => ModuleNameEnum::COURSES],
-        
-        
+
+
         ['key' => self::M_SETTINGS_INDEX, 'module' => ModuleNameEnum::SETTINGS],
         ['key' => self::M_SETTINGS_UPDATE, 'module' => ModuleNameEnum::SETTINGS],
 

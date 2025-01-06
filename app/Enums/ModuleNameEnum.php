@@ -11,16 +11,11 @@ enum ModuleNameEnum: string
 
     case USERS = 'users';
     case ROLES = 'roles';
-    case hospitality_providers = 'hospitality_providers';
-    case BRANCHES = 'branches';
-    case WITHDRAWS = 'withdraws';
-    case SPONSORS = 'sponsors';
     case COURSES = 'courses';
     case CATEGORIES = 'categories';
     case TESTIMONIALS = 'testimonials';
     case ENROLCLIENTS = 'enroll_clients';
     case SETTINGS = 'settings';
     case CLIENTS = 'clients';
-    case OFFERS = 'offers';
 
 }
