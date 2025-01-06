@@ -15,8 +15,6 @@
     </div>
     <div class="grid md:grid-cols-1 gap-3 p-4">
       <!-- Replace the Editor with a Textarea -->
-      <textarea v-model="el_form.description" class="w-full p-2 border border-gray-300 text-lg rounded"
-        style="height: 350px;" placeholder="Enter course description here..."></textarea>
 
       <Editor api-key="q2jazfqzv1t24h74c89f9m6wow0egwnzjrzqivcjita5yt2t" :init="{
         toolbar_mode: 'sliding',
