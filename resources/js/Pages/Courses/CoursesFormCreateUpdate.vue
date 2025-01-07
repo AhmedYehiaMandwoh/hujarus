@@ -15,25 +15,24 @@
     </div>
     <div class="grid md:grid-cols-1 gap-3 p-4">
       <!-- Replace the Editor with a Textarea -->
-
-      <Editor api-key="q2jazfqzv1t24h74c89f9m6wow0egwnzjrzqivcjita5yt2t" :init="{
-        toolbar_mode: 'sliding',
-        plugins: [
-          // Core editing features
-          'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
-          // Your account includes a free trial of TinyMCE premium features
-          // Try the most popular premium features until Jan 21, 2025:
-          'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown', 'importword', 'exportword', 'exportpdf'
-        ],
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-        tinycomments_mode: 'embedded',
-        tinycomments_author: 'Author name',
-        mergetags_list: [
-          { value: 'First.Name', title: 'First Name' },
-          { value: 'Email', title: 'Email' },
-        ],
-        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
-      }" :initial-value="el_form.description" />
+      <Editor api-key="q2jazfqzv1t24h74c89f9m6wow0egwnzjrzqivcjita5yt2t" 
+        v-model="el_form.description"  
+        :init="{
+          toolbar_mode: 'sliding',
+          plugins: [
+            'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+            'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown', 'importword', 'exportword', 'exportpdf'
+          ],
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+          tinycomments_mode: 'embedded',
+          tinycomments_author: 'Author name',
+          mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+          ],
+          ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
+        }" 
+        :initial-value="el_form.description" />
 
       <floating-dropdown v-if="!is_create" :form="el_form" name="is_active" :required="1" :options="formData.is_active"
         :label="$t('base.is_active')" />
@@ -73,14 +72,13 @@ const props = defineProps({
 
 const is_create = !props.row.id;
 const el_row = props.row;
-const descriptionVal = ref(el_row.description || ''); // Bind initial description
 
 const el_form = useForm({
   id: el_row.id,
   avatar: null,
   avatar_url: el_row.avatar_url ?? null,
   title: el_row.title ?? null,
-  description: descriptionVal ?? null, // Bind initial description
+  description: el_row.description ?? null, // Bind initial description
   category_id: el_row.category_id ?? '',
   price: el_row.price ?? null,
   instructor: el_row.instructor ?? null,
@@ -107,12 +105,14 @@ if (is_create) {
 
 // Submit the form
 const submit = () => {
+  // Ensure that description is updated in el_form before submitting
   el_form.post(is_create ? route('courses.store') : route('courses.update', el_form.id), {
     onSuccess: () => {
       if (is_create) el_form.reset();
     },
   });
 };
+
 </script>
 
 <style>

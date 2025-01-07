@@ -15,6 +15,7 @@ class CoursesUpdateAction extends BaseAction
     public function handle(Course $course, CourseRequest $request)
     {
         $validated_data = $request->validated();
+
         if (data_get($validated_data, 'avatar')) {
             $validated_data['avatar'] = StorageService::publicUpload(StoragePathEnum::COURSES, $request->file('avatar'), oldFileToDeletePath: $course->avatar);
         } else {
